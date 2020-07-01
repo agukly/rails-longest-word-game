@@ -38,3 +38,4 @@ class GamesController < ApplicationController
 
 
 end
+

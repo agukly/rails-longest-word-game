@@ -1,69 +1,176 @@
+body {
+  background-size: cover;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1516053256215-94022213b13c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80');
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+
 li {
-  display:inline;
-  background-image: url('https://raw.githubusercontent.com/agukly/rails-longest-word-game/master/app/assets/images/letter5.png');
-  color: white;
-  font-size: 36px;
-  padding-left: 27px;
-  padding-right: 27px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  display:inline-block;
+  background-image: url('https://raw.githubusercontent.com/agukly/rails-longest-word-game/master/app/assets/images/letter4.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: black;
+  font-size: 46px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 23px;
+  padding-bottom: 25px;
   margin: 10px;
-  font-family: 'Montserrat', ;
+  font-family: 'Indie Flower', cursive;
 }
 
 h1 {
   margin-left: 52px;
-  font-family: 'Montserrat', ;
-
+  font-family: 'Handlee', cursive;
+  text-decoration: underline;
 }
 
-label {
-  font-family: 'Montserrat', ;
-  font-size: 20px;
-}
 
 form {
   margin: 47px;
 }
 
+
+input,
+span,
+label,
+textarea {
+  font-family: 'Handlee', cursive;
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 18px;
+}
+
+textarea:focus,
+input:focus {
+  outline: 0;
+}
+/* Question */
+
+input.question {
+  font-size: 35px;
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  width: 80%;
+  background: rgba(0, 0, 0, 0);
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+
+input.question + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 10%;
+  border-top: 1px solid red;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 0px;
+}
+
+input.question:focus + label {
+  width: 80%;
+}
+
+input.question:focus,
+input.question:valid {
+  padding-top: 35px;
+}
+
+
+input.question:focus + label > span,
+input.question:valid + label > span {
+  top: -100px;
+  font-size: 22px;
+  color: #333;
+}
+
+input.question:valid + label {
+  border-color: green;
+}
+
+input.question:invalid {
+  box-shadow: none;
+}
+
+input.question + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: #8F8F8F;
+  font-size: 38px;
+  top: -66px;
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+input[type="submit"] {
+  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: block;
+  opacity: 0;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input[type="submit"] {
+  display: none;
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.letters {
+ margin-top: 17vh;
+ text-align: center;
+}
+
 #input {
   display: flex;
-}
-
-#input_table {
-  width: 100%;
-  height: 30px;
-  border: 1px solid gray;
-  border-radius: 7px;
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
-  font-size: 14px;
-  font-family: 'Montserrat', ;
   margin-top: 10px;
 }
 
-#submit {
-  background-color: white;
-  border: 1px solid gray;
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: 'Montserrat', ;
-  margin-top: 10px;
-}
 
 .result {
   margin-left: 51px;
-  font-family: 'Montserrat', ;
+  font-family: 'Indie Flower', cursive;
   margin-bottom: 20px;
 }
 
 .go_back {
   margin-left: 51px;
-  font-family: 'Montserrat', ;
+  font-family: 'Handlee', cursive;
   a {
       text-decoration: none;
       color: #4F79B9;

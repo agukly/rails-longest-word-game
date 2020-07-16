@@ -1,11 +1,11 @@
 # README
 
-# LONGEST WORD GAME - *COUNTDOWN* ![alt text](https://github.com/agukly/rails-longest-word-game/blob/master/images/writing_gif.gif?raw=true)
+# LONGEST WORD GAME - *COUNTDOWN* ![alt text](https://raw.githubusercontent.com/agukly/rails-longest-word-game/master/app/assets/images/writing_gif.gif?raw=true)
 Guess and type the longest word from the grid
 
 ## Getting Started
 
-![alt text](https://github.com/agukly/rails-longest-word-game/blob/master/images/sample.png?raw=true)
+![alt text](https://github.com/agukly/rails-longest-word-game/blob/master/app/assets/images/sample.png?raw=true)
 
 ### Installing
 Clone the project to your local machine, run the local server `http://localhost:3000/new` and have some fun guessing the longest word.

@@ -9,11 +9,14 @@
 </div>
 
 
-
 <form action="/score" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= hidden_field_tag :letters, @letters %>
-  <input type="text" name="word" class="question" id="nme" required autocomplete="off">
+  <input type="text" name="word" class="question" required autocomplete="off">
   <label for="nme"><span>What is the longest word you can find?</span></label>
-  <input type="submit" value="PLAY">
+  <input type="submit" value="PLAY!">
 </form>
+
+<div class="go_back">
+    <%= link_to "Reshuffle?", new_path %>
+</div>

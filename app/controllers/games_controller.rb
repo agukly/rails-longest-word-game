@@ -10,9 +10,9 @@ class GamesController < ApplicationController
     @letters = params[:letters]
     @word = params[:word].upcase
     if !compsrison?(@word.split(''), @letters.split)
-      @result = "Sorry but #{@word} can't be build out of #{@letters}"
+      @result = "Sorry, but #{@word} can't be build out of #{@letters}"
     elsif !check_api?(@word)
-      @result = "Sorry but #{@word} doesn't seem to be valid English word..."
+      @result = "Sorry, but #{@word} doesn't seem to be valid English word..."
     else
       @result = "Congratulations! #{@word} is a valid English word!"
     end

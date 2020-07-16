@@ -8,7 +8,6 @@ ul {
   padding-inline-start: 0px;
 }
 
-
 li {
   display:inline-block;
   background-image: url('https://raw.githubusercontent.com/agukly/rails-longest-word-game/master/app/assets/images/letter4.png');
@@ -30,11 +29,28 @@ h1 {
   text-decoration: underline;
 }
 
-
 form {
   margin: 47px;
 }
 
+.letters {
+ margin-top: 17vh;
+ text-align: center;
+}
+
+.go_back {
+  float: right;
+  margin-top: 80px;
+  margin-right: 100px;
+  font-size: 35px;
+  font-family: 'Handlee', cursive;
+  a {
+      text-decoration: none;
+      color: #4F79B9;
+  }
+}
+
+// input and from styling
 
 input,
 span,
@@ -45,7 +61,7 @@ textarea {
   margin: 10px;
   padding: 5px;
   border: none;
-  font-size: 18px;
+  font-size: 35px;
 }
 
 textarea:focus,
@@ -57,13 +73,11 @@ input:focus {
 input.question {
   font-size: 35px;
   font-weight: 300;
-  border-radius: 2px;
   margin: 0;
-  border: none;
   width: 80%;
   background: rgba(0, 0, 0, 0);
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+  overflow-x: hidden;
 }
 /* Underline and Placeholder */
 
@@ -88,7 +102,6 @@ input.question:focus,
 input.question:valid {
   padding-top: 35px;
 }
-
 
 input.question:focus + label > span,
 input.question:valid + label > span {
@@ -127,6 +140,7 @@ input[type="submit"] {
   padding: 10px;
   cursor: pointer;
   background-color: transparent;
+  color: #4F79B9;
 }
 
 input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
@@ -150,29 +164,35 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
   }
 }
 
+// sketchy box for displaying results
+.sketchy {
+    padding: 4rem 8rem;
+    border: 3px solid #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #fffcfc;
+    position: relative;
+    font-family: 'Handlee', cursive;
+    margin: 0 auto;
+    margin-top: 40vh;
+    width: 400px;
+    text-align: center;
 
-.letters {
- margin-top: 17vh;
- text-align: center;
+    &::before {
+        content: '';
+        border: 2px solid #353535;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+    }
 }
 
-#input {
-  display: flex;
-  margin-top: 10px;
-}
-
-
-.result {
-  margin-left: 51px;
-  font-family: 'Indie Flower', cursive;
-  margin-bottom: 20px;
-}
-
-.go_back {
-  margin-left: 51px;
-  font-family: 'Handlee', cursive;
-  a {
-      text-decoration: none;
-      color: #4F79B9;
-  }
+.sketchy h1 {
+  margin-left: 0;
 }
